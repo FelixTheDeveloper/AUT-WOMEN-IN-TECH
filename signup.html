@@ -37,10 +37,7 @@
 					<div class="container">
 						<div id="content">
 							<h2>Sign Up</h2>
-							<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-								Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-								Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-									consequat etiam lorem ipsum dolor sit amet nullam.</p>
+							<p>Keen to help us empower more women in tech? Please fill in the form below and we'll be in touch.</p>
 
 							<form>
 								<label for="fname">First Name:</label>
@@ -53,24 +50,32 @@
 								<input type="text" id="email" name="email"><br>
 
 								<label for="studentid">Student/Staff ID:</label>
-								<input type="text" id="studentid" name="studentid"><br>
-
+								<input type="text" id="studentid" name="studentid"><br>	
+								
 								<label for="membertype">Membership Type:</label>
-								<input type="radio" id="student" name="membertype" value="student">
 
-								<label for="student">Student</label>
-								<input type="radio" id="staff" name="membertype" value="staff">
+								<div style="display:flex">
+									<input type="radio" id="student" name="membertype" value="student">
+									<label for="student">Student</label><br>
+								</div>
 
-								<label for="staff">Staff</label>
-								<input type="radio" id="alumni" name="membertype" value="alumni">
+								<div style="display:flex">
+									<input type="radio" id="staff" name="membertype" value="staff">
+									<label for="staff">Staff</label><br>
+								</div>
 
-								<label for="alumni">Alumni</label>
-								<input type="radio" id="external" name="membertype" value="external">
+								<div style="display:flex">
+									<input type="radio" id="alumni" name="membertype" value="alumni">
+									<label for="alumni">Alumni</label><br><br>
+								</div>
 
-								<input type="checkbox" id="newsletter" name="newsletter">
-								<label for="newsletter">Sign up to our newsletter</label><br>
+								<div style="display:flex">
+									<input type="checkbox" id="newsletter" name="newsletter">
+									<label for="newsletter">Sign up to our newsletter</label><br><br>
+								</div>
 
-								<input type="submit" value="Submit">
+
+								<input style="text-align:center" type="submit" value="Submit">
 							  </form>
 						</div>
 					</div>
