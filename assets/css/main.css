@@ -68,7 +68,6 @@ input::-moz-focus-inner {
 
 input, select, textarea {
 	-moz-appearance: none;
-	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
 }
@@ -1487,6 +1486,17 @@ input, select, textarea {
 
 /* Forms */
 
+	form {
+		margin: 0 auto; 
+		width:70%;
+		border-radius: 8px;
+		border: solid 1px #444;
+		padding-top: 50px;
+		padding-right: 30px;
+		padding-bottom: 50px;
+		padding-left: 80px;
+	}
+
 	form label {
 		display: block;
 		font-weight: 800;
@@ -1504,7 +1514,7 @@ input, select, textarea {
 		display: block;
 		width: 70%;
 		border-radius: 8px;
-		border: solid 1px #eee;
+		border: solid 1px #444;
 	}
 
 		form input[type="text"]:focus,
@@ -1530,26 +1540,6 @@ input, select, textarea {
 	form textarea {
 		min-height: 9em;
 		padding: 1em;
-	}
-
-	form ::-webkit-input-placeholder {
-		color: #555 !important;
-	}
-
-	form :-moz-placeholder {
-		color: #555 !important;
-	}
-
-	form ::-moz-placeholder {
-		color: #555 !important;
-	}
-
-	form :-ms-input-placeholder {
-		color: #555 !important;
-	}
-
-	form ::-moz-focus-inner {
-		border: 0;
 	}
 
 /* Tables */
