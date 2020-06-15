@@ -6,6 +6,7 @@
 
 (function($) {
 
+
 	var	$window = $(window),
 		$body = $('body');
 
@@ -31,6 +32,10 @@
 			speed: 300
 		});
 
+
+	//MDB Lightbox Init
+		$("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+
 	// Nav.
 
 		// Toggle.
@@ -40,6 +45,8 @@
 				'</div>'
 			)
 				.appendTo($body);
+
+
 
 		// Panel.
 			$(
