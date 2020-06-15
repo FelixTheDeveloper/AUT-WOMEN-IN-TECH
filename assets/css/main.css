@@ -1582,8 +1582,10 @@ input, select, textarea {
 
 		.image img {
 			display: block;
-			width: 100%;
+			max-width: 500px;
+			max-height: 300px;
 			border-radius: 8px;
+			margin: 0 auto;
 		}
 
 		.image.fit {
@@ -1594,7 +1596,7 @@ input, select, textarea {
 		.image.featured {
 			display: block;
 			width: 100%;
-			margin: 0 0 2.5em 0;
+			margin: 0 auto;
 		}
 
 		.image.left {
