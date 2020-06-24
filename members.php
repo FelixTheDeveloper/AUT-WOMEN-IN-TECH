@@ -51,15 +51,7 @@
                                 </tr>
 
                                 <?php
-
-									$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-									$server = $url["host"];
-									$username = $url["user"];
-									$password = $url["pass"];
-									$db = substr($url["path"], 1);
-
-									$conn = new mysqli($server, $username, $password, $db);
+                                    $con = mysqli_connect('us-cdbr-east-05.cleardb.net','b14f7c20a4ae6e','39974f46', "heroku_86f69cc7fd22282");
 
 									if (!$con) {
 										echo "Server error";
