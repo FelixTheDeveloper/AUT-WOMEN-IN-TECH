@@ -37,47 +37,53 @@
 				<div id="main-wrapper">
 					<div class="container">
 						<div id="content">
-							<h2>Sign Up</h2>
-							<p>Keen to help us empower more women in tech? Please fill in the form below and we'll be in touch.</p>
-							<form action="signup.php" method="POST">
-								<label for="firstName">First Name:</label>
-								<input type="text" id="firstName" name="firstName"><br>
-								
-								<label for="lastName">Last Name:</label>
-								<input type="text" id="lastName" name="lastName"><br>
-								
-								<label for="email">Email:</label>
-								<input type="text" id="email" name="email"><br>
-								
-								<label for="tertiaryId">Student/Staff ID:</label>
-								<input type="text" id="tertiaryId" name="tertiaryId"><br>	
-								
-								<label for="memberType">Membership Type:</label>
-								
-								<div style="display:flex">
-									<input type="radio" id="student" name="memberType" value="student">
-									<label for="student">Student</label><br>
-								</div>
-									
-								<div style="display:flex">
-										<input type="radio" id="staff" name="memberType" value="staff">
-										<label for="staff">Staff</label><br>
-								</div>
-									
-								<div style="display:flex">
-										<input type="radio" id="alumni" name="memberType" value="alumni">
-										<label for="alumni">Alumni</label><br><br>
-								</div>
-									
-								<div style="display:flex">
-										<input type="checkbox" id="newsletter" name="newsletter" value="true">
-										<label for="newsletter">Sign up to our newsletter</label><br><br>
-								</div>
-												
-								<input style="text-align:center" type="submit" value="Submit">
-							</form>
-							<br>
-							<a href="members.php">Temp button to view members</a>
+                            <h2>Members</h2>
+
+                            <table>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Student/Staff ID</th>
+                                    <th>Member Type</th>
+                                    <th>Newsletter</th>
+                                </tr>
+
+                                <?php
+
+                                    $con = mysqli_connect('127.0.0.1','root','');
+
+									if (!$con) {
+										echo "Server error";
+									}
+	
+									if (!mysqli_select_db($con,'autwomenintech')) {
+										echo "Could not connect to database";
+									}
+
+                                    $sql = "SELECT * FROM members";
+
+                                    $records = mysqli_query($con,$sql);
+
+                                    while ($row = mysqli_fetch_array($records)) {                                       
+                                        echo "<tr>";
+                                        echo "<td>".$row['id']."</td>";
+                                        echo "<td>" . $row['firstName'] . "</td>";
+                                        echo "<td>" . $row['lastName'] . "</td>";
+                                        echo "<td>" . $row['email'] . "</td>";
+                                        echo "<td>" . $row['tertiaryID'] . "</td>";
+                                        echo "<td>" . $row['memberType'] . "</td>";
+                                        if ($row['newsletter'] == true) {
+                                            echo "<td>Yes</td>";
+                                        } else {
+                                            echo "<td>No</td>";
+                                        }
+                                        echo "</tr>";
+                                    }
+
+                                ?>
+                            </table>
 						</div>
 					</div>
 				</div>

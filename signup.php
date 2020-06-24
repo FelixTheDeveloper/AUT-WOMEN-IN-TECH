@@ -37,9 +37,63 @@
 				<div id="main-wrapper">
 					<div class="container">
 						<div id="content">
-							<h2>Sign Up</h2>
-							<p>Keen to help us empower more women in tech? Please fill in the form below and we'll be in touch.</p>
-							<form action="signup.php" method="POST">
+                            <h2>Sign Up</h2>
+                             
+                            <?php
+                                $con = mysqli_connect('127.0.0.1','root','');
+
+                                if (!$con) {
+                                    echo "Server error";
+                                }
+
+                                if (!mysqli_select_db($con,'autwomenintech')) {
+                                    echo "Could not connect to database";
+                                }
+
+                                $firstName = $_POST['firstName'];
+                                $lastName = $_POST['lastName'];
+                                $email = $_POST['email'];
+                                $tertiaryId = $_POST['tertiaryId'];
+                                if(!isset($_POST['memberType'])){
+                                    $memberType = '';
+                                } else if ($_POST['memberType'] == 'student') {
+                                    $memberType = 'Student';
+                                } elseif ($_POST['memberType'] == 'staff') {
+                                    $memberType = 'Staff';
+                                } elseif ($_POST['memberType'] == 'alumni') {
+                                    $memberType = 'Alumni';
+                                }
+                                if(isset($_POST['newsletter'])){
+                                    $newsletter = true;
+                                } else {
+                                    $newsletter = false;
+                                }
+
+                                $sql = "INSERT INTO members (
+                                            firstName, 
+                                            lastName, 
+                                            email, 
+                                            tertiaryId, 
+                                            memberType, 
+                                            newsletter 
+                                        ) VALUES (
+                                            '$firstName', 
+                                            '$lastName',
+                                            '$email',
+                                            '$tertiaryId',
+                                            '$memberType',
+                                            '$newsletter'
+                                        )";
+
+                                if(!mysqli_query($con, $sql)) {
+                                    echo "Could not insert, please try again.";
+                                } else {
+                                    echo "<p><b>Thanks, " . $firstName . " for signing up, we will be in touch soon!</b></p>";
+                                }
+
+                            ?>
+
+                            <form action="signup.php" method="POST">
 								<label for="firstName">First Name:</label>
 								<input type="text" id="firstName" name="firstName"><br>
 								
@@ -74,13 +128,13 @@
 										<label for="newsletter">Sign up to our newsletter</label><br><br>
 								</div>
 												
-								<input style="text-align:center" type="submit" value="Submit">
-							</form>
+                                <input style="text-align:center" type="submit" value="Submit">
+                            </form>
 							<br>
 							<a href="members.php">Temp button to view members</a>
 						</div>
 					</div>
-				</div>
+                </div>
 
 			<!-- Footer -->
 				<div id="footer-wrapper">
