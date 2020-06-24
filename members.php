@@ -57,7 +57,7 @@
 										echo "Server error";
 									}
 	
-									if (!mysqli_select_db($con,'autwomenintech')) {
+									if (!mysqli_select_db($con,'heroku_86f69cc7fd22282')) {
 										echo "Could not connect to database";
 									}
 

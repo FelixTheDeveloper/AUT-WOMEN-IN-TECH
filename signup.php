@@ -41,13 +41,13 @@
                              
                             <?php
 								
-								$con = mysqli_connect('us-cdbr-east-05.cleardb.net','b14f7c20a4ae6e','39974f46', "heroku_86f69cc7fd22282");
+								$con = mysqli_connect('us-cdbr-east-05.cleardb.net','b14f7c20a4ae6e','39974f46');
 
                                 if (!$con) {
                                     echo "Server error";
                                 }
 
-                                if (!mysqli_select_db($con,'autwomenintech')) {
+                                if (!mysqli_select_db($con,'heroku_86f69cc7fd22282')) {
                                     echo "Could not connect to database";
                                 }
 
