@@ -48,7 +48,6 @@
                                     <th>Email</th>
                                     <th>Student/Staff ID</th>
                                     <th>Member Type</th>
-                                    <th>Newsletter</th>
                                 </tr>
 
                                 <?php
@@ -74,11 +73,6 @@
                                         echo "<td>" . $row['email'] . "</td>";
                                         echo "<td>" . $row['tertiaryID'] . "</td>";
                                         echo "<td>" . $row['memberType'] . "</td>";
-                                        if ($row['newsletter'] == true) {
-                                            echo "<td>Yes</td>";
-                                        } else {
-                                            echo "<td>No</td>";
-                                        }
                                         echo "</tr>";
                                     }
 

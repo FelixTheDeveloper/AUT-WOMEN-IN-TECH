@@ -65,26 +65,19 @@
                                 } elseif ($_POST['memberType'] == 'alumni') {
                                     $memberType = 'Alumni';
                                 }
-                                if(isset($_POST['newsletter'])){
-                                    $newsletter = true;
-                                } else {
-                                    $newsletter = false;
-                                }
 
                                 $sql = "INSERT INTO members (
                                             firstName, 
                                             lastName, 
                                             email, 
                                             tertiaryId, 
-                                            memberType, 
-                                            newsletter 
+                                            memberType,
                                         ) VALUES (
                                             '$firstName', 
                                             '$lastName',
                                             '$email',
                                             '$tertiaryId',
                                             '$memberType',
-                                            '$newsletter'
                                         )";
 
                                 if(!mysqli_query($con, $sql)) {
@@ -123,11 +116,6 @@
 								<div style="display:flex">
 										<input type="radio" id="alumni" name="memberType" value="alumni">
 										<label for="alumni">Alumni</label><br><br>
-								</div>
-									
-								<div style="display:flex">
-										<input type="checkbox" id="newsletter" name="newsletter" value="true">
-										<label for="newsletter">Sign up to our newsletter</label><br><br>
 								</div>
 												
                                 <input style="text-align:center" type="submit" value="Submit">
