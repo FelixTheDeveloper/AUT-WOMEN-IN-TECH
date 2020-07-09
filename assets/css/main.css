@@ -1627,7 +1627,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		position: relative;
 		display: inline-block;
-		background: #ff4486;
+		background: #94618e;
 		color: #fff;
 		text-decoration: none;
 		border-radius: 6px;
@@ -1654,7 +1654,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #10a0d5;
+			background: #49274A;
 		}
 
 		input[type="button"]:active,
@@ -1931,7 +1931,7 @@ input, select, textarea {
 	}
 
 		#logo h1 {
-			background: #ff4486;
+			background: #94618e;
 			color: #fff;
 			border-radius: 6px;
 			font-family: 'Oleo Script', serif;
