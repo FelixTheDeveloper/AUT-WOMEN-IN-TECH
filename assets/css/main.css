@@ -2075,11 +2075,11 @@ input, select, textarea {
 			margin: 0.1em 0 0.35em 0;
 		}
 
-		#banner p {
+		/* #banner p {
 			font-size: 2.75em;
 			line-height: 1.35em;
 			margin: 0;
-		}
+		} */
 
 		#banner .button {
 			width: 100%;
