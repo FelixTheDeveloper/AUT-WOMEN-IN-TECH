@@ -120,8 +120,6 @@
 												
                                 <input style="text-align:center" type="submit" value="Submit">
                             </form>
-							<br>
-							<a href="members.php">Temp button to view members</a>
 						</div>
 					</div>
                 </div>
