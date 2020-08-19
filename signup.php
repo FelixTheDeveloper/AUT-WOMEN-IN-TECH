@@ -11,7 +11,13 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header-wrapper">
+			<div id="header-wrapper">
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="signup.html">Sign In</a></li>
+						</ul>
+					</nav>
 					<header id="header" class="container">
 
 						<!-- Logo -->
@@ -22,12 +28,12 @@
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li><a href="index.html">Home</a></li>
+									<li><a href="index.html">Home</a></li>									
+									<li><a href="about.html">About Us</a></li>
 									<li><a href="events.html">Events</a></li>
 									<li><a href="gallery.html">Gallery</a></li>
 									<li><a href="stories.html">Success Stories</a></li>
 									<li><a href="mentoring.html">Mentoring</a></li>
-									<li class="current"><a href="signup.html">Sign Up</a></li>
 								</ul>
 							</nav>
 
