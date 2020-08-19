@@ -23,7 +23,7 @@
 							<div id="sign-in-bar">
 								<nav id="nav">
 											<ul>
-												<li><a href="login.html">Sign In</a></li>
+												<li style="margin-right: 1rem;"><a href="login.html">Sign In</a></li>
 											</ul>
 								</nav>
 							</div>
@@ -141,7 +141,7 @@
 
 								Contact
 								<section class="widget contact">
-										<h3>Contact Us</h3>
+										<h3 style="color:#e9f2f7;">Contact Us</h3>
 										<ul>
 											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>

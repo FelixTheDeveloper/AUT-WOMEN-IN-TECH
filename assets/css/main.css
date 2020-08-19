@@ -127,7 +127,7 @@ input, select, textarea {
 		}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #000000;
+		color: #f26f22;
 		font-weight: 800;
 	}
 
@@ -1632,7 +1632,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		position: relative;
 		display: inline-block;
-		background: #94618e;
+		background: #f26f22;
 		color: #fff;
 		text-decoration: none;
 		border-radius: 6px;
@@ -1906,7 +1906,8 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		padding: 0 0 6em 0;
+		padding: 0 0 5em 0;
+		background-color: #f26522;
 	}
 
 	#features-wrapper {
@@ -1984,7 +1985,7 @@ input, select, textarea {
 					transition: background-color .25s ease-in-out;
 					font-weight: 800;
 					letter-spacing: 0.025em;
-					color: #696969;
+					color: #e9f2f7;
 					text-decoration: none;
 					border-radius: 6px;
 					padding: 0.5em 1em 0.5em 1em;
@@ -1996,6 +1997,7 @@ input, select, textarea {
 
 				#nav ul li:hover a, #nav ul li:hover span {
 					background: #fff;
+					color: #000000;
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
@@ -2123,7 +2125,7 @@ input, select, textarea {
 		}
 
 	#copyright {
-		color: #aaa;
+		color: #e9f2f7;
 		text-align: center;
 	}
 
