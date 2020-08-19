@@ -11,28 +11,37 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
-
-						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="index.html">Women In Tech</a></h1>
+			<div id="logo" style="position: absolute !important; z-index: 2 !important; margin-left: 50px;">
+					<a href="index.html">
+						<img src="images/wit-logo.png" href="index.html" width="160" height="160">
+					</a>
+					</div>
+						<div id="header-wrapper">
+							<header id="header" class="container">	
+							<!-- Logo -->
+							</header>
+							<div id="sign-in-bar">
+								<nav id="nav">
+											<ul>
+												<li style="margin-right: 1rem;"><a href="login.html">Sign In</a></li>
+											</ul>
+								</nav>
 							</div>
-
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="events.html">Events</a></li>
-									<li><a href="gallery.html">Gallery</a></li>
-									<li><a href="profiles.html">Profiles</a></li>
-									<li><a href="mentoring.html">Mentoring</a></li>
-									<li class="current"><a href="signup.html">Sign Up</a></li>
-								</ul>
-							</nav>
-
-					</header>
-				</div>
+							<div id="nav-bar" style="background-color: #f26522">
+									<header id="header" class="container">	
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>									
+												<li><a href="about.html">About Us</a></li>
+												<li><a href="events.html">Events</a></li>
+												<li><a href="gallery.html">Gallery</a></li>
+												<li><a href="stories.html">Success Stories</a></li>
+												<li><a href="mentoring.html">Mentoring</a></li>
+											</ul>
+										</nav>
+									</header>
+							</div>
+						</div>
 
 			<!-- Main -->
 				<div id="main-wrapper">
@@ -132,7 +141,7 @@
 
 								Contact
 								<section class="widget contact">
-										<h3>Contact Us</h3>
+										<h3 style="color:#e9f2f7;">Contact Us</h3>
 										<ul>
 											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>

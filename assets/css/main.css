@@ -87,17 +87,13 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-color: #f7f7f7;
+		background-color: #f07d00;
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
 		background-size: 100% 30em, auto;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
-		color: #696969;
+		color: #000000;
 		font-weight: 300;
 		line-height: 2.25em;
 	}
@@ -116,7 +112,7 @@ input, select, textarea {
 	input, select, textarea {
 		font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
-		color: #696969;
+		color: #000000;
 		font-weight: 300;
 		line-height: 2.25em;
 	}
@@ -131,7 +127,7 @@ input, select, textarea {
 		}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #444;
+		color: #f26f22;
 		font-weight: 800;
 	}
 
@@ -154,7 +150,7 @@ input, select, textarea {
 
 	b, strong {
 		font-weight: 600;
-		color: #444;
+		color: #000000;
 	}
 
 	i, em {
@@ -1484,6 +1480,15 @@ input, select, textarea {
 		margin: 2.5em 0 0 0;
 	}
 
+	#sign-in-bar {
+		width: 100vw;
+		position: relative;
+		margin-left: -50vw;
+		height: 60px;
+		left: 50%;
+		background-color: #d93b20;
+	}
+
 /* Forms */
 
 	form {
@@ -1627,7 +1632,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		position: relative;
 		display: inline-block;
-		background: #94618e;
+		background: #f26f22;
 		color: #fff;
 		text-decoration: none;
 		border-radius: 6px;
@@ -1901,7 +1906,8 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		padding: 4.5em 0 3em 0;
+		padding: 0 0 5em 0;
+		background-color: #f26522;
 	}
 
 	#features-wrapper {
@@ -1979,7 +1985,7 @@ input, select, textarea {
 					transition: background-color .25s ease-in-out;
 					font-weight: 800;
 					letter-spacing: 0.025em;
-					color: #696969;
+					color: #e9f2f7;
 					text-decoration: none;
 					border-radius: 6px;
 					padding: 0.5em 1em 0.5em 1em;
@@ -1991,6 +1997,7 @@ input, select, textarea {
 
 				#nav ul li:hover a, #nav ul li:hover span {
 					background: #fff;
+					color: #000000;
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
@@ -2072,7 +2079,7 @@ input, select, textarea {
 
 		#banner h2 {
 			font-size: 3.5em;
-			margin: 0.1em 0 0.35em 0;
+			margin: 0.1em 0 0.1em 0;
 		}
 
 		/* #banner p {
@@ -2118,7 +2125,7 @@ input, select, textarea {
 		}
 
 	#copyright {
-		color: #aaa;
+		color: #e9f2f7;
 		text-align: center;
 	}
 
