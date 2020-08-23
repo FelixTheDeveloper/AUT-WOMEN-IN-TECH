@@ -47,11 +47,12 @@
 												</ul>
 											</li>
 											<li><a href="mentoring.html">Mentoring</a>
-												<ul>
-													<li><a href="menteesignup.html">Request Mentoring</a></li>
-													<li><a href="mentorsignup.html">Become a Mentor</a></li>
-												</ul>
-											</li>
+													<ul>
+														<li><a href="mentoring.html">About Mentoring</a></li>
+														<li><a href="menteesignup.html">Request Mentoring</a></li>
+														<li><a href="mentorsignup.html">Become a Mentor</a></li>
+													</ul>
+												</li>
 										</ul>
 										</nav>
 									</header>
