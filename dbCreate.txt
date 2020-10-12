@@ -1,0 +1,68 @@
+--
+-- Database: `womenintech`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `id` int(32) NOT NULL,
+  `firstName` varchar(32) NOT NULL,
+  `lastName` varchar(32) NOT NULL,
+  `email` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `tertiaryId` varchar(16) NOT NULL,
+  `memberType` varchar(32) NOT NULL,
+  `isAdmin` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mentees`
+--
+
+CREATE TABLE `mentees` (
+  `id` int(32) NOT NULL,
+  `member_id` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mentors`
+--
+
+CREATE TABLE `mentors` (
+  `id` int(32) NOT NULL,
+  `member_id` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(32) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `location` varchar(64) NOT NULL,
+  `capacity` int(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_member`
+--
+
+CREATE TABLE `event_member` (
+  `id` int(32) NOT NULL,
+  `event_id` int(32) NOT NULL,
+  `member_id` int(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
