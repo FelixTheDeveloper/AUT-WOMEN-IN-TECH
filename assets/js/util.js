@@ -372,7 +372,7 @@
 								$('<div>')
 									.append(i.clone())
 									.remove()
-									.html()
+									.php()
 									.replace(/type="password"/i, 'type="text"')
 									.replace(/type=password/i, 'type=text')
 					);

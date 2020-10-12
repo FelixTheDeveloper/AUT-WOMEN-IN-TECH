@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
+<?php
+	session_start();
+?>
 <html>
 	<head>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -12,8 +15,8 @@
 
 			<!-- Header -->
 			<div id="logo" style="position: absolute !important; z-index: 2 !important; margin-left: 50px;">
-					<a href="index.html">
-						<img src=" images/logo.png" href="index.html" width="160" height="160">
+					<a href="index.php">
+						<img src=" images/logo.png" href="index.php" width="160" height="160">
 					</a>
 					</div>
 						<div id="header-wrapper">
@@ -23,7 +26,18 @@
 							<div id="sign-in-bar">
 								<nav id="nav">
 											<ul>
-												<li style="margin-right: 1rem;"><a href="login.html">Sign In</a></li>
+											<?php
+													if (isset($_SESSION['firstName'])) {
+														$email = $_SESSION['email'];
+														?> <li style="margin-right: 1rem;"><a href="profile.php">Welcome, <?php echo $email ?> </a>
+															<ul>
+																<li><a href="logout.php">Log Out</a></li>
+															</ul>
+													</li> <?php
+													} else {
+														?> <li style="margin-right: 1rem;"><a href="login.php">Sign In</a></li> <?php
+													}
+												?>
 											</ul>
 								</nav>
 							</div>
@@ -32,27 +46,21 @@
 									<!-- Nav -->
 										<nav id="nav">
 										<ul>									
-											<li><a href="about.html">About Us</a>
+											<li><a href="about.php">About Us</a>
 												<ul>
-													<li><a href="about.html">About Us</a></li>
-													<li><a href="team.html">Our Team</a></li>
+													<li><a href="about.php">About Us</a></li>
+													<li><a href="team.php">Our Team</a></li>
 												</ul>
 											</li>
-											<li><a href="events.html">Events</a></li>
-											<li><a href="gallery.html">Gallery</a></li>
-											<li><a href="staffstories.html">Success Stories</a>
+											<li><a href="events.php">Events</a></li>
+											<li><a href="gallery.php">Gallery</a></li>
+											<li><a href="staffstories.php">Success Stories</a>
 												<ul>
-													<li><a href="staffstories.html">Staff Profiles</a></li>
-													<li><a href="studentstories.html">Student Profiles</a></li>
+													<li><a href="staffstories.php">Staff Profiles</a></li>
+													<li><a href="studentstories.php">Student Profiles</a></li>
 												</ul>
 											</li>
-											<li><a href="mentoring.html">Mentoring</a>
-													<ul>
-														<li><a href="mentoring.html">About Mentoring</a></li>
-														<li><a href="menteesignup.html">Request Mentoring</a></li>
-														<li><a href="mentorsignup.html">Become a Mentor</a></li>
-													</ul>
-												</li>
+											<li><a href="mentoring.php">Mentoring</a></li>
 										</ul>
 										</nav>
 									</header>
@@ -66,54 +74,68 @@
                             <h2>Sign Up</h2>
                              
                             <?php
-								
-								$con = mysqli_connect('us-cdbr-east-05.cleardb.net','b14f7c20a4ae6e','39974f46');
+								$con = mysqli_connect('localhost','root','','womenintech');
 
                                 if (!$con) {
                                     echo "Server error";
-                                }
+								}
 
-                                if (!mysqli_select_db($con,'heroku_86f69cc7fd22282')) {
-                                    echo "Could not connect to database";
-                                }
 
-                                $firstName = $_POST['firstName'];
-                                $lastName = $_POST['lastName'];
-                                $email = $_POST['email'];
-                                $tertiaryId = $_POST['tertiaryId'];
-                                if(!isset($_POST['memberType'])){
-                                    $memberType = '';
-                                } else if ($_POST['memberType'] == 'student') {
-                                    $memberType = 'Student';
-                                } elseif ($_POST['memberType'] == 'staff') {
-                                    $memberType = 'Staff';
-                                } elseif ($_POST['memberType'] == 'alumni') {
-                                    $memberType = 'Alumni';
-                                }
+								if (isset($_POST['register'])) {
+									$firstName = $_POST['firstName'];
+									$lastName = $_POST['lastName'];
+									$email = $_POST['email'];
+									$tertiaryId = $_POST['tertiaryId'];
+									if(!isset($_POST['memberType'])){
+										$memberType = '';
+									} else if ($_POST['memberType'] == 'student') {
+										$memberType = 'Student';
+									} elseif ($_POST['memberType'] == 'staff') {
+										$memberType = 'Staff';
+									} elseif ($_POST['memberType'] == 'alumni') {
+										$memberType = 'Alumni';
+									}
+									$password = $_POST['password'];
+									$password1 = $_POST['password1'];
 
-                                $sql = "INSERT INTO members (
-                                            firstName, 
-                                            lastName, 
-                                            email, 
-                                            tertiaryId, 
-                                            memberType,
-                                        ) VALUES (
-                                            '$firstName', 
-                                            '$lastName',
-                                            '$email',
-                                            '$tertiaryId',
-                                            '$memberType',
-                                        )";
+									if ($password == $password1) {
+										$password = md5($password);
 
-                                if(!mysqli_query($con, $sql)) {
-                                    echo "Could not insert, please try again.";
-                                } else {
-                                    echo "<p><b>Thanks, " . $firstName . " for signing up, we will be in touch soon!</b></p>";
-                                }
+										$sql = "INSERT INTO members (
+											firstName, 
+											lastName, 
+											email,
+											password, 
+											tertiaryId, 
+											memberType
+										) VALUES (
+											'$firstName', 
+											'$lastName',
+											'$email',
+											'$password',
+											'$tertiaryId',
+											'$memberType'
+										)";
 
+										if(!mysqli_query($con, $sql)) {
+											echo "Could not insert, please try again.";
+											echo $sql;
+										} else {
+											echo "<p><b>Thanks, " . $firstName . " for signing up, we will be in touch soon!</b></p>";
+											$_SESSION['message'] = "You are now logged in";
+											$_SESSION['email'] = $email;
+											$_SESSION['firstName'] = $firstName;
+											header("location: index.php");
+										}
+
+									} else {
+										#passwords do not match
+										$_SESSION['message'] = 'The passwords do not match';
+									}
+								}
                             ?>
 
-                            <form action="signup.php" method="POST">
+								<form action="signup.php" method="POST">
 								<label for="firstName">First Name:</label>
 								<input type="text" id="firstName" name="firstName"><br>
 								
@@ -121,30 +143,35 @@
 								<input type="text" id="lastName" name="lastName"><br>
 								
 								<label for="email">Email:</label>
-								<input type="text" id="email" name="email"><br>
-								
-								<label for="tertiaryId">Student/Staff ID:</label>
-								<input type="text" id="tertiaryId" name="tertiaryId"><br>	
-								
-								<label for="memberType">Membership Type:</label>
-								
-								<div style="display:flex">
-									<input type="radio" id="student" name="memberType" value="student">
-									<label for="student">Student</label><br>
-								</div>
+									<input type="text" id="email" name="email"><br>
 									
-								<div style="display:flex">
-										<input type="radio" id="staff" name="memberType" value="staff">
-										<label for="staff">Staff</label><br>
-								</div>
+									<label for="tertiaryId">Student/Staff ID:</label>
+									<input type="text" id="tertiaryId" name="tertiaryId"><br>	
 									
-								<div style="display:flex">
-										<input type="radio" id="alumni" name="memberType" value="alumni">
-										<label for="alumni">Alumni</label><br><br>
-								</div>
-												
-                                <input style="text-align:center" type="submit" value="Submit">
-                            </form>
+									<label for="memberType">Membership Type: (Please select)</label>
+
+									<select type="text" id="memberType" name="memberType">
+										<option value="student">Student</option>
+										<option value="staff">Staff</option>
+										<option value="alumni">Alumni</option>
+									</select><br>
+											
+									<label for="password">Password:</label>
+									<input type="password" id="password" name="password"><br>
+									
+									<label for="password1">Repeat Password:</label>
+									<input type="password" id="password1" name="password1"><br>
+
+									<?php 
+										if (isset($_SESSION['message'])) {
+											echo $_SESSION['message']; 
+										}
+									
+									?>
+									<br>
+
+									<input style="text-align:center" type="submit" name='register' value="Submit">
+							</form>
 						</div>
 					</div>
                 </div>
@@ -152,7 +179,7 @@
 			<!-- Footer -->
 				<div id="footer-wrapper">
 					<footer id="footer" class="container">
-						<!-- <div class="row">
+						<div class="row">
 							<div class="col-3 col-6-medium col-12-small">
 
 								Contact
@@ -166,7 +193,7 @@
 								</section>
 
 							</div>
-						</div> -->
+						</div>
 						<div class="row">
 							<div class="col-12">
 								<div id="copyright">
