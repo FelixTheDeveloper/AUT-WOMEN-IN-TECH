@@ -93,13 +93,28 @@
 	
 							</p>
 						</article>
+
+						<div id="sidebar container">
+
+							<!-- Sidebar -->
+							<section style="background-color: #fee2c0; padding: 40px 41px 42px;">
+								<iframe height="400px" width="400px"
+									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FWomen-in-Technology-at-AUT-100506515131889&tabs=timeline&width=400&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+									style="border:none;overflow:hidden; " scrolling="no" frameborder="0" allowTransparency="true"
+									allow="encrypted-media"></iframe>
+
+
+								<iframe width="640" height="400" src="https://www.youtube.com/embed/P4LV06LD-9M" frameborder="1"
+									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+									style=" float: right;"></iframe>
+							</section>
+
+						</div>
 					</div>
+				</div>
 
 					
-					<br><br><iframe  width="640" height="360" src="https://www.youtube.com/embed/P4LV06LD-9M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: flex; margin: 0 auto;"></iframe>
-
-				</div>
-	
+					
 
 				<!-- Begin Mailchimp Signup Form -->	
 			<!-- Footer -->
