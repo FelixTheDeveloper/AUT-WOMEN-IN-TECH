@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <?php
-	session_start();
+		session_start();
+		require_once('vendor/autoload.php');
+	
+		\Dotenv\Dotenv::create(__DIR__)->load();
 ?>
 <html>
 	<head>
@@ -74,7 +77,7 @@
                             <h2>Sign Up</h2>
                              
                             <?php
-								$con = mysqli_connect('localhost','root','','womenintech');
+								$con = mysqli_connect($_ENV['DB_HOST'],$_ENV['DB_USER'],$_ENV['DB_PASS'],$_ENV['DB_NAME']);
 
                                 if (!$con) {
                                     echo "Server error";
