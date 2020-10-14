@@ -79,7 +79,10 @@
 									also links underneath where students can sign up if they are wanting to be mentored or for mentees to sign up.
 									Our story started 5 years ago; a woman in tech with a dream to change representation in STEM-related fields. 
 									Since then we have held over thirty events, workshops, and networking opportunities offering a safe, inclusive, 
-									and diverse environment for everyone interested in all things STEM.
+									and diverse environment for everyone interested in all things STEM.We encourage students to continously improve 
+									themselves and venture in other skills through mentoring program so they can be equipped with knowledge in various 
+									areas in the STEM field. In the case of having prior tech knowledge or none at all, the mentors aim to help provide 
+									support and guidance based on their respective competence and availability
 								</p>
 
 								<?php
